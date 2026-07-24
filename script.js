@@ -9,7 +9,7 @@ const renderList = () => {
     itemsList.innerHTML = '';
     shoppingList.forEach((item) => {
         const li = document.createElement('li');
-        li.innerText = item;
+        li.textContent = item;
         itemsList.appendChild(li);
     })
 };
@@ -21,6 +21,9 @@ addItemBtn.addEventListener("click", () => {
         addItem(item);
         renderList();
         itemsInput.value = '';
+    } else {
+        alert ('Please enter your item');
+        return;
     }
 })
 
